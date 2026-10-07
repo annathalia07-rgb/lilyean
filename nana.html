@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Website Anna Thalia</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: white;
+            line-height: 1.6;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff69b4,
+                    #c05acb,
+                    #8e44ad,
+                    #4b1b78
+                );
+
+            background-attachment: fixed;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+
+            padding: 15px 8%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background: rgba(40, 0, 60, 0.55);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #ffb6e6;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 22px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffb6e6;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 100px 20px 50px;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before,
+        .hero::after {
+            content: "";
+
+            position: absolute;
+
+            width: 280px;
+            height: 280px;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.12);
+
+            filter: blur(5px);
+        }
+
+        .hero::before {
+            top: 10%;
+            left: -100px;
+        }
+
+        .hero::after {
+            bottom: 5%;
+            right: -100px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile {
+            width: 155px;
+            height: 155px;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+
+            border: 5px solid rgba(255,255,255,0.85);
+
+            box-shadow:
+                0 10px 35px rgba(0,0,0,0.3);
+
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 7vw, 75px);
+
+            margin-bottom: 10px;
+        }
+
+        .hero h1 span {
+            color: #ffd1ed;
+        }
+
+        .hero p {
+            font-size: 20px;
+
+            opacity: 0.9;
+
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+
+            padding: 13px 28px;
+
+            margin: 5px;
+
+            border-radius: 30px;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            background: rgba(255,255,255,0.2);
+
+            border: 1px solid rgba(255,255,255,0.4);
+
+            backdrop-filter: blur(10px);
+
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+
+            background: white;
+
+            color: #8e44ad;
+
+            box-shadow:
+                0 10px 25px rgba(0,0,0,0.2);
+        }
+
+
+        /* ================= SECTION ================= */
+
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            opacity: 0.8;
+        }
+
+
+        /* ================= GLASS CARD ================= */
+
+        .glass {
+            background: rgba(255,255,255,0.13);
+
+            border: 1px solid rgba(255,255,255,0.2);
+
+            box-shadow:
+                0 15px 35px rgba(0,0,0,0.18);
+
+            backdrop-filter: blur(15px);
+
+            border-radius: 25px;
+        }
+
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 30px;
+        }
+
+        .about-card {
+            padding: 35px;
+        }
+
+        .about-card h3 {
+            font-size: 25px;
+
+            margin-bottom: 15px;
+
+            color: #ffd1ed;
+        }
+
+
+        /* ================= BIODATA ================= */
+
+        .biodata {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 15px;
+        }
+
+        .data {
+            padding: 20px;
+
+            background: rgba(255,255,255,0.08);
+
+            border-radius: 15px;
+
+            border: 1px solid rgba(255,255,255,0.12);
+
+            transition: 0.3s;
+        }
+
+        .data:hover {
+            transform: translateY(-3px);
+
+            background: rgba(255,255,255,0.15);
+        }
+
+        .data strong {
+            color: #ffc4e8;
+        }
+
+
+        /* ================= GRID ================= */
+
+        .tech-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+
+        /* ================= CARD ================= */
+
+        .tech-card {
+            padding: 30px;
+
+            text-align: center;
+
+            transition: 0.3s;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-10px);
+
+            background: rgba(255,255,255,0.2);
+        }
+
+        .tech-icon {
+            font-size: 50px;
+
+            margin-bottom: 15px;
+        }
+
+        .tech-card h3 {
+            color: #ffd1ed;
+
+            margin-bottom: 12px;
+
+            font-size: 23px;
+        }
+
+
+        /* ================= CONTOH BOX ================= */
+
+        .example-box {
+            margin-top: 22px;
+
+            padding: 16px;
+
+            border-radius: 16px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,182,225,0.28),
+                    rgba(180,120,255,0.28)
+                );
+
+            border: 1px solid rgba(255,255,255,0.3);
+
+            box-shadow:
+                0 5px 15px rgba(0,0,0,0.12);
+
+            text-align: left;
+
+            transition: 0.3s;
+        }
+
+        .example-box:hover {
+            transform: scale(1.03);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,182,225,0.4),
+                    rgba(180,120,255,0.4)
+                );
+        }
+
+        .example-box strong {
+            display: block;
+
+            color: #ffd1ed;
+
+            font-size: 16px;
+
+            margin-bottom: 5px;
+        }
+
+        .example-box p {
+            margin: 0;
+
+            font-size: 14px;
+
+            opacity: 0.95;
+        }
+
+
+        /* ================= CONTACT ================= */
+
+        .contact-box {
+            max-width: 750px;
+
+            margin: auto;
+
+            padding: 40px;
+
+            text-align: center;
+        }
+
+        .contact-item {
+            display: block;
+
+            margin: 15px 0;
+
+            padding: 15px;
+
+            border-radius: 15px;
+
+            color: white;
+
+            text-decoration: none;
+
+            background: rgba(255,255,255,0.1);
+
+            transition: 0.3s;
+
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .contact-item:hover {
+            background: rgba(255,255,255,0.25);
+
+            transform: scale(1.02);
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            text-align: center;
+
+            padding: 25px;
+
+            background: rgba(30,0,50,0.5);
+        }
+
+        footer span {
+            color: #ffb6e6;
+        }
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 900px) {
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .tech-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            section {
+                padding: 70px 5%;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .biodata {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+    <div class="logo">
+        My<span>Profile</span> ✨
+    </div>
+
+    <ul>
+
+        <li>
+            <a href="#home">Home</a>
+        </li>
+
+        <li>
+            <a href="#about">Tentang</a>
+        </li>
+
+        <li>
+            <a href="#biodata">Biodata</a>
+        </li>
+
+        <li>
+            <a href="#hobi">Hobi</a>
+        </li>
+
+        <li>
+            <a href="#teknologi">Teknologi</a>
+        </li>
+
+        <li>
+            <a href="#kontak">Kontak</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+
+<!-- ================= HOME ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <!-- GANTI DENGAN FOTO KAMU -->
+        <img
+            src="foto.jpg"
+            class="profile"
+            alt="Foto Profil"
+        >
+
+        <h1>
+            Halo, Saya
+            <span>Anna Thalia</span>
+            👋
+        </h1>
+
+        <p>
+            Selamat datang di website pribadi saya.
+            Di sini saya memperkenalkan diri,
+            hobi, serta pengetahuan dasar mengenai teknologi.
+        </p>
+
+        <a href="#about" class="btn">
+            🌷 Tentang Saya
+        </a>
+
+        <a href="#teknologi" class="btn">
+            💻 Pelajari Teknologi
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= TENTANG SAYA ================= -->
+
+<section id="about">
+
+    <div class="section-title">
+
+        <h2>
+            🌷 Tentang Saya
+        </h2>
+
+        <p>
+            Kenali saya lebih dekat
+        </p>
+
+    </div>
+
+
+    <div class="about">
+
+
+        <div class="glass about-card">
+
+            <h3>
+                ✨ Perkenalan
+            </h3>
+
+            <p>
+                Halo! Nama saya
+                <b>Anna Thalia</b>.
+                Saya adalah seorang pelajar yang memiliki
+                ketertarikan terhadap dunia teknologi,
+                khususnya komputer dan jaringan.
+            </p>
+
+            <br>
+
+            <p>
+                Saya senang mempelajari hal-hal baru,
+                mencoba teknologi, serta mengembangkan
+                kemampuan di bidang komputer dan jaringan.
+            </p>
+
+        </div>
+
+
+        <div class="glass about-card">
+
+            <h3>
+                🎯 Tujuan Saya
+            </h3>
+
+            <p>
+                Saya ingin terus meningkatkan kemampuan
+                dalam bidang teknologi dan
+                komputer jaringan.
+            </p>
+
+            <br>
+
+            <p>
+                Dengan belajar dan berlatih secara konsisten,
+                saya berharap dapat memiliki keterampilan
+                yang bermanfaat untuk masa depan.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= BIODATA ================= -->
+
+<section id="biodata">
+
+    <div class="section-title">
+
+        <h2>
+            💜 Biodata Saya
+        </h2>
+
+        <p>
+            Informasi singkat mengenai diri saya
+        </p>
+
+    </div>
+
+
+    <div class="glass about-card">
+
+        <div class="biodata">
+
+
+            <div class="data">
+
+                <strong>
+                    👤 Nama
+                </strong>
+
+                <br>
+
+                Anna Thalia Avita
+
+            </div>
+
+
+            <div class="data">
+
+                <strong>
+                    🎓 Sekolah
+                </strong>
+
+                <br>
+
+                SMK 3 Perguruan "Cikini"
+
+            </div>
+
+
+            <div class="data">
+
+                <strong>
+                    💻 Jurusan
+                </strong>
+
+                <br>
+
+                Teknik Komputer dan Jaringan
+
+            </div>
+
+
+            <div class="data">
+
+                <strong>
+                     📆 Tempat, Tanggal lahir
+                </strong>
+
+                <br>
+
+                Jakarta, 17 Juli 2008
+
+            </div>
+          
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= HOBI ================= -->
+
+<section id="hobi">
+
+    <div class="section-title">
+
+        <h2>
+             Hobi Saya
+        </h2>
+
+        <p>
+            Beberapa kegiatan yang saya sukai
+        </p>
+
+    </div>
+
+
+    <div class="tech-grid">
+
+
+        <!-- MENDENGARKAN LAGU -->
+
+        <div class="glass tech-card">
+
+            <div class="tech-icon">
+                🎧
+            </div>
+
+            <h3>
+                Mendengarkan Lagu
+            </h3>
+
+            <p>
+                Saya suka mendengarkan lagu untuk
+                menghibur diri, menghilangkan rasa
+                bosan, dan membuat suasana menjadi
+                lebih menyenangkan.
+            </p>
+
+        </div>
+
+
+
+        <!-- MEMASAK -->
+
+        <div class="glass tech-card">
+
+            <div class="tech-icon">
+                🍳
+            </div>
+
+            <h3>
+                Memasak
+            </h3>
+
+            <p>
+                Memasak merupakan salah satu kegiatan
+                yang saya sukai karena saya dapat
+                mencoba berbagai resep dan membuat
+                makanan yang saya inginkan.
+            </p>
+
+        </div>
+
+
+
+        <!-- MENARI -->
+
+        <div class="glass tech-card">
+
+            <div class="tech-icon">
+                💃
+            </div>
+
+            <h3>
+                Menari
+            </h3>
+
+            <p>
+                Saya suka menari karena kegiatan ini
+                menyenangkan, membuat tubuh lebih aktif,
+                dan menjadi salah satu cara untuk
+                mengekspresikan diri.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= TEKNOLOGI ================= -->
+
+<section id="teknologi">
+
+
+    <div class="section-title">
+
+        <h2>
+            💻 Dasar Teknologi
+        </h2>
+
+        <p>
+            Pengertian dan contoh teknologi yang sering digunakan
+        </p>
+
+    </div>
+
+
+    <div class="tech-grid">
+
+
+        <!-- KOMPUTER -->
+
+        <div class="glass tech-card">
+
+            <div class="tech-icon">
+                💻
+            </div>
+
+            <h3>
+                Komputer
+            </h3>
+
+            <p>
+                Komputer adalah perangkat elektronik
+                yang digunakan untuk menerima, mengolah,
+                menyimpan, dan menghasilkan data.
+            </p>
+
+
+            <div class="example-box">
+
+                <strong>
+                    📌 Contoh
+                </strong>
+
+                <p>
+                    PC, Laptop, Workstation
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- JARINGAN -->
+
+        <div class="glass tech-card">
+
+            <div class="tech-icon">
+                🌐
+            </div>
+
+            <h3>
+                Jaringan Komputer
+            </h3>
+
+            <p>
+                Jaringan komputer adalah hubungan antara
+                dua atau lebih perangkat untuk bertukar
+                data dan berbagi sumber daya.
+            </p>
+
+
+            <div class="example-box">
+
+                <strong>
+                    📌 Contoh
+                </strong>
+
+                <p>
+                    LAN, MAN, WAN, Wi-Fi
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SMARTPHONE -->
+
+        <div class="glass tech-card">
+
+            <div class="tech-icon">
+                📱
+            </div>
+
+            <h3>
+                Smartphone
+            </h3>
+
+            <p>
+                Smartphone adalah perangkat seluler
+                yang memiliki kemampuan seperti komputer
+                dan dapat menjalankan berbagai aplikasi.
+            </p>
+
+
+            <div class="example-box">
+
+                <strong>
+                    📌 Contoh
+                </strong>
+
+                <p>
+                    Android, iPhone
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CLOUD COMPUTING -->
+
+        <div class="glass tech-card">
+
+            <div class="tech-icon">
+                ☁️
+            </div>
+
+            <h3>
+                Cloud Computing
+            </h3>
+
+            <p>
+                Cloud computing adalah teknologi yang
+                memungkinkan pengguna menyimpan dan
+                mengakses data melalui internet.
+            </p>
+
+
+            <div class="example-box">
+
+                <strong>
+                    📌 Contoh
+                </strong>
+
+                <p>
+                    Google Drive, OneDrive, Dropbox
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- KEAMANAN SIBER -->
+
+        <div class="glass tech-card">
+
+            <div class="tech-icon">
+                🔐
+            </div>
+
+            <h3>
+                Keamanan Siber
+            </h3>
+
+            <p>
+                Keamanan siber merupakan upaya melindungi
+                perangkat, jaringan, dan data dari berbagai
+                ancaman digital.
+            </p>
+
+
+            <div class="example-box">
+
+                <strong>
+                    📌 Contoh
+                </strong>
+
+                <p>
+                    Firewall, Antivirus, Enkripsi
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- AI -->
+
+        <div class="glass tech-card">
+
+            <div class="tech-icon">
+                🤖
+            </div>
+
+            <h3>
+                Artificial Intelligence
+            </h3>
+
+            <p>
+                AI adalah teknologi yang memungkinkan
+                komputer melakukan tugas yang biasanya
+                membutuhkan kecerdasan manusia.
+            </p>
+
+
+            <div class="example-box">
+
+                <strong>
+                    📌 Contoh
+                </strong>
+
+                <p>
+                    ChatGPT, Chatbot, Sistem Rekomendasi
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= KONTAK ================= -->
+
+<section id="kontak">
+
+
+    <div class="section-title">
+
+        <h2>
+            💌 Hubungi Saya
+        </h2>
+
+        <p>
+            Silakan hubungi saya melalui kontak berikut
+        </p>
+
+    </div>
+
+
+    <div class="glass contact-box">
+
+
+        <!-- GANTI EMAIL KAMU -->
+        <a
+            class="contact-item"
+            href="mailto:annathalia07@gmail.com"
+        >
+
+            📧 Email
+
+            <br>
+
+            annathalia07@gmail.com
+
+        </a>
+
+
+
+        <!-- GANTI INSTAGRAM KAMU -->
+        <a
+            class="contact-item"
+            href="https://www.instagram.com/thli4a"
+            target="_blank"
+        >
+
+            📸 Instagram
+
+            <br>
+
+            @thli4a
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+
+        © 2026
+        <span>Anna Thalia</span>
+        | Personal Website
+
+    </p>
+
+</footer>
+
+
+</body>
+</html>
